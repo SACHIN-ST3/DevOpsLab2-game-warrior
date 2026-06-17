@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: game-warrior
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: game-warrior
+
+  template:
+    metadata:
+      labels:
+        app: game-warrior
+
+    spec:
+      containers:
+      - name: game-warrior
+
+        image: sachin938/game-warrior:latest
+
+        ports:
+        - containerPort: 80
